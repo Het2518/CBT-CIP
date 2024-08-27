@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventLitez</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>EventLitez</h1>
+    </header>
+    <main>
+        <section id="create-event">
+            <h2>Create New Event</h2>
+            <form id="eventForm">
+                <div class="form-group">
+                    <label for="eventName">Event Name:</label>
+                    <input type="text" id="eventName" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventDate">Date:</label>
+                    <input type="date" id="eventDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventTime">Time:</label>
+                    <input type="time" id="eventTime" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventLocation">Location:</label>
+                    <input type="text" id="eventLocation" required>
+                </div>
+                <button type="submit">Create Event</button>
+            </form>
+        </section>
+        <section id="event-list">
+            <h2>Upcoming Events</h2>
+            <div id="eventList"></div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
