@@ -3,7 +3,7 @@ const eventList = document.getElementById('eventList');
 
 eventForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     const eventName = document.getElementById('eventName').value;
     const eventDate = document.getElementById('eventDate').value;
     const eventTime = document.getElementById('eventTime').value;
