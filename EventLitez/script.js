@@ -1,7 +1,7 @@
 const eventForm = document.getElementById('eventForm');
 const eventList = document.getElementById('eventList');
 
-eventForm.addEventListener('submit', function(e) {
+eventForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
     const eventName = document.getElementById('eventName').value;
@@ -14,32 +14,24 @@ eventForm.addEventListener('submit', function(e) {
         date: eventDate,
         time: eventTime,
         location: eventLocation
-    };
+    }
 
-    let events = JSON.parse(localStorage.getItem('events')) || [];
-    events.push(event);
-    localStorage.setItem('events', JSON.stringify(events));
-
-    displayEvents();
+    addEventToList(event);
     eventForm.reset();
-});
+})
 
-function displayEvents() {
-    const events = JSON.parse(localStorage.getItem('events')) || [];
-    eventList.innerHTML = '';
 
-    events.forEach(event => {
-        const eventDiv = document.createElement('div');
-        eventDiv.classList.add('event-item');
-        eventDiv.innerHTML = `
+const addEventToList = (event) => {
+    const eventDiv = document.createElement('div');
+    eventDiv.classList.add('event-item');
+
+    eventDiv.innerHTML = `
             <h3>${event.name}</h3>
             <p>Date: ${event.date}</p>
             <p>Time: ${event.time}</p>
             <p>Location: ${event.location}</p>
         `;
-        eventList.appendChild(eventDiv);
-    });
-}
 
-// Display events on page load
-displayEvents();
+    eventList.appendChild(eventDiv);
+
+}
